@@ -1,0 +1,70 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.20.xsd">
+
+    <!--    Sequences -->
+    <changeSet author="system" id="1">
+        <createSequence cycle="false" incrementBy="1" sequenceName="ITEM_SEQ" startValue="1"/>
+        <createSequence cycle="false" incrementBy="1" sequenceName="ORDER_SEQ" startValue="1"/>
+        <createSequence cycle="false" incrementBy="1" sequenceName="ITEM_ORDER_PRICE_SEQ" startValue="1"/>
+    </changeSet>
+
+    <!--    Tables -->
+    <changeSet author="system" id="2">
+        <createTable tableName="ORDER">
+            <column name="ID" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="DATE_TIME" type="TIMESTAMP WITH TIME ZONE">
+                <constraints nullable="false"/>
+            </column>
+            <column name="NAME" type="CHARACTER VARYING">
+                <constraints nullable="false"/>
+            </column>
+            <column name="DESCRIPTION" type="CHARACTER VARYING"/>
+        </createTable>
+        <createTable tableName="ITEM">
+            <column name="ID" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="NAME" type="CHARACTER VARYING">
+                <constraints nullable="false"/>
+            </column>
+            <column name="DESCRIPTION" type="CHARACTER VARYING"/>
+        </createTable>
+        <createTable tableName="ORDER_ITEM">
+            <column name="ORDER_ID" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="ITEM_ID" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+
+    <!-- Constraints -->
+    <changeSet id="3" author="system">
+        <!-- PK -->
+        <addPrimaryKey tableName="ITEM" columnNames="ID" constraintName="PK_ITEM_ID"/>
+        <addPrimaryKey tableName="ORDER" columnNames="ID" constraintName="PK_ORDER_ID"/>
+        <addPrimaryKey tableName="ORDER_ITEM" columnNames="ORDER_ID, ITEM_ID" constraintName="PK_ORDER_ITEM_IDS"/>
+
+
+        <!-- FK-->
+        <addForeignKeyConstraint baseTableName="ORDER_ITEM" baseColumnNames="ORDER_ID"
+                                 constraintName="FK_ORDER_ITEM_ORDER_ID" referencedTableName="ORDER"
+                                 referencedColumnNames="ID" onDelete="NO ACTION" onUpdate="NO ACTION"/>
+        <addForeignKeyConstraint baseTableName="ORDER_ITEM" baseColumnNames="ITEM_ID"
+                                 constraintName="FK_ORDER_ITEM_ITEM_ID" referencedTableName="ITEM"
+                                 referencedColumnNames="ID" onDelete="NO ACTION" onUpdate="NO ACTION"/>
+    </changeSet>
+
+    <!--    PostgreSQL -->
+    <changeSet id="4" author="system" dbms="postgresql">
+        <modifyDataType tableName="ORDER" columnName="NAME" newDataType="TEXT"/>
+        <modifyDataType tableName="ORDER" columnName="DESCRIPTION" newDataType="TEXT"/>
+        <modifyDataType tableName="ITEM" columnName="NAME" newDataType="TEXT"/>
+        <modifyDataType tableName="ITEM" columnName="DESCRIPTION" newDataType="TEXT"/>
+    </changeSet>
+</databaseChangeLog>

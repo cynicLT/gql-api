@@ -1,0 +1,30 @@
+type Query {
+    itemBy(id:ID): Item
+    items:[Item!]
+    itemsBy(orderId:ID): [Item!]
+
+    orderBy(id:ID): Order
+    orders:[Order!]
+
+}
+
+######### Scalars
+scalar OffsetDateTime
+scalar Void
+
+######### Type
+
+type Item {
+    id: ID
+    name: String
+    description: String
+    orders: [Order!]
+}
+
+type Order{
+    id: ID
+    dateTime: OffsetDateTime
+    name: String
+    description: String
+    items: [Item!]
+}

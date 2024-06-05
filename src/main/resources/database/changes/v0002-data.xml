@@ -1,0 +1,217 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.20.xsd">
+
+    <!--    Data -->
+    <changeSet author="system" id="5">
+        <insert tableName="ORDER">
+            <column name="ID" valueSequenceNext="ORDER_SEQ"/>
+            <column name="DATE_TIME" valueComputed="CURRENT_TIMESTAMP()"/>
+            <column name="NAME" value="Deliver bananas"/>
+            <column name="DESCRIPTION"
+                    value="Passenger secure ways supporting consulting null shipped, moment magazine britannica beads movie key welcome, situations firms emotions overall editorials."/>
+        </insert>
+        <insert tableName="ORDER">
+            <column name="ID" valueSequenceNext="ORDER_SEQ"/>
+            <column name="DATE_TIME" valueComputed="CURRENT_TIMESTAMP()"/>
+            <column name="NAME" value="To EUROVAISTINE"/>
+        </insert>
+
+        <insert tableName="ORDER">
+            <column name="ID" valueSequenceNext="ORDER_SEQ"/>
+            <column name="DATE_TIME" valueComputed="CURRENT_TIMESTAMP()"/>
+            <column name="NAME" value="Truck details"/>
+        </insert>
+        <insert tableName="ORDER">
+            <column name="ID" valueSequenceNext="ORDER_SEQ"/>
+            <column name="DATE_TIME" valueComputed="CURRENT_TIMESTAMP()"/>
+            <column name="NAME" value="Warehouse leftovers"/>
+        </insert>
+
+        <insert tableName="ORDER">
+            <column name="ID" valueSequenceNext="ORDER_SEQ"/>
+            <column name="DATE_TIME" valueComputed="CURRENT_TIMESTAMP()"/>
+            <column name="NAME" value="Order 1"/>
+        </insert>
+        <insert tableName="ORDER">
+            <column name="ID" valueSequenceNext="ORDER_SEQ"/>
+            <column name="DATE_TIME" valueComputed="CURRENT_TIMESTAMP()"/>
+            <column name="NAME" value="Order 2"/>
+        </insert>
+
+        <insert tableName="ORDER">
+            <column name="ID" valueSequenceNext="ORDER_SEQ"/>
+            <column name="DATE_TIME" valueComputed="CURRENT_TIMESTAMP()"/>
+            <column name="NAME"
+                    value="Notifications poems renaissance application suffer tribal alexandria, importance arranged proven combination vertical prospects butler, commissioners stickers gray rides bless teddy advanced, tooth democracy field polished wireless marked exhaust, guilty."/>
+        </insert>
+        <insert tableName="ORDER">
+            <column name="ID" valueSequenceNext="ORDER_SEQ"/>
+            <column name="DATE_TIME" valueComputed="CURRENT_TIMESTAMP()"/>
+            <column name="NAME" value="Decrease speak sporting response."/>
+            <column name="DESCRIPTION" value="Singing St 2265, Verkalix, Rwanda, 719495"/>
+        </insert>
+    </changeSet>
+
+    <changeSet author="system" id="6">
+        <insert tableName="ITEM">
+            <column name="ID" valueSequenceNext="ITEM_SEQ"/>
+            <column name="NAME" value="Chiquite Bananase"/>
+        </insert>
+        <insert tableName="ITEM">
+            <column name="ID" valueSequenceNext="ITEM_SEQ"/>
+            <column name="NAME" value="Columbia Bananas"/>
+        </insert>
+        <insert tableName="ITEM">
+            <column name="ID" valueSequenceNext="ITEM_SEQ"/>
+            <column name="NAME" value="Dried Banana from Congo"/>
+        </insert>
+        <insert tableName="ITEM">
+            <column name="ID" valueSequenceNext="ITEM_SEQ"/>
+            <column name="NAME" value="Insulin (Nonorapid)"/>
+            <column name="DESCRIPTION" value="Fridge required"/>
+        </insert>
+        <insert tableName="ITEM">
+            <column name="ID" valueSequenceNext="ITEM_SEQ"/>
+            <column name="NAME" value="Tramadol"/>
+            <column name="DESCRIPTION" value="Drug protection"/>
+        </insert>
+        <insert tableName="ITEM">
+            <column name="ID" valueSequenceNext="ITEM_SEQ"/>
+            <column name="NAME" value="Car spare parts"/>
+            <column name="DESCRIPTION" value="For Krasta Auto"/>
+        </insert>
+        <insert tableName="ITEM">
+            <column name="ID" valueSequenceNext="ITEM_SEQ"/>
+            <column name="NAME" value="Coconut"/>
+        </insert>
+        <insert tableName="ITEM">
+            <column name="ID" valueSequenceNext="ITEM_SEQ"/>
+            <column name="NAME" value="Consolidated from leftovers"/>
+        </insert>
+        <insert tableName="ITEM">
+            <column name="ID" valueSequenceNext="ITEM_SEQ"/>
+            <column name="NAME" value="Chairs for Southbey"/>
+            <column name="DESCRIPTION" value="Expensive required guardians"/>
+        </insert>
+        <insert tableName="ITEM">
+            <column name="ID" valueSequenceNext="ITEM_SEQ"/>
+            <column name="NAME" value="Vilkiskiu Varske"/>
+            <column name="DESCRIPTION"
+                    value="по началу мне нравился этот сериал... но когда девушка пришла рожать ребенка на берег кислотного моря, я понял что она пришла туду, чтобы выкинуть новорожденного в кислоту, ... и я понял что сериал ховно... а когда она стала делать вид что ей грустно что новорожденного забрало другое существо... я понял что сериал ещё хуже... и когда она почти позвола убить приёмную маму, вскармливающего ребенка... я пронял что больше не буду смотреть этот сериал"/>
+        </insert>
+        <insert tableName="ITEM">
+            <column name="ID" valueSequenceNext="ITEM_SEQ"/>
+            <column name="NAME" value="Дерево (сырое необработаное)"/>
+            <column name="DESCRIPTION" value="Возможно контрабанда"/>
+        </insert>
+    </changeSet>
+
+    <changeSet author="system" id="7">
+        <insert tableName="ORDER_ITEM">
+            <column name="ORDER_ID" value="1"/>
+            <column name="ITEM_ID" value="1"/>
+        </insert>
+        <insert tableName="ORDER_ITEM">
+            <column name="ORDER_ID" value="1"/>
+            <column name="ITEM_ID" value="2"/>
+        </insert>
+        <insert tableName="ORDER_ITEM">
+            <column name="ORDER_ID" value="1"/>
+            <column name="ITEM_ID" value="3"/>
+        </insert>
+        <insert tableName="ORDER_ITEM">
+            <column name="ORDER_ID" value="2"/>
+            <column name="ITEM_ID" value="4"/>
+        </insert>
+        <insert tableName="ORDER_ITEM">
+            <column name="ORDER_ID" value="2"/>
+            <column name="ITEM_ID" value="5"/>
+        </insert>
+        <insert tableName="ORDER_ITEM">
+            <column name="ORDER_ID" value="3"/>
+            <column name="ITEM_ID" value="6"/>
+        </insert>
+        <insert tableName="ORDER_ITEM">
+            <column name="ORDER_ID" value="4"/>
+            <column name="ITEM_ID" value="7"/>
+        </insert>
+        <insert tableName="ORDER_ITEM">
+            <column name="ORDER_ID" value="4"/>
+            <column name="ITEM_ID" value="8"/>
+        </insert>
+        <insert tableName="ORDER_ITEM">
+            <column name="ORDER_ID" value="4"/>
+            <column name="ITEM_ID" value="9"/>
+        </insert>
+        <insert tableName="ORDER_ITEM">
+            <column name="ORDER_ID" value="4"/>
+            <column name="ITEM_ID" value="10"/>
+        </insert>
+        <insert tableName="ORDER_ITEM">
+            <column name="ORDER_ID" value="1"/>
+            <column name="ITEM_ID" value="10"/>
+        </insert>
+        <insert tableName="ORDER_ITEM">
+            <column name="ORDER_ID" value="2"/>
+            <column name="ITEM_ID" value="10"/>
+        </insert>
+        <insert tableName="ORDER_ITEM">
+            <column name="ORDER_ID" value="3"/>
+            <column name="ITEM_ID" value="10"/>
+        </insert>
+        <insert tableName="ORDER_ITEM">
+            <column name="ORDER_ID" value="4"/>
+            <column name="ITEM_ID" value="11"/>
+        </insert>
+        <insert tableName="ORDER_ITEM">
+            <column name="ORDER_ID" value="5"/>
+            <column name="ITEM_ID" value="1"/>
+        </insert>
+        <insert tableName="ORDER_ITEM">
+            <column name="ORDER_ID" value="5"/>
+            <column name="ITEM_ID" value="2"/>
+        </insert>
+        <insert tableName="ORDER_ITEM">
+            <column name="ORDER_ID" value="5"/>
+            <column name="ITEM_ID" value="3"/>
+        </insert>
+        <insert tableName="ORDER_ITEM">
+            <column name="ORDER_ID" value="5"/>
+            <column name="ITEM_ID" value="4"/>
+        </insert>
+        <insert tableName="ORDER_ITEM">
+            <column name="ORDER_ID" value="5"/>
+            <column name="ITEM_ID" value="5"/>
+        </insert>
+        <insert tableName="ORDER_ITEM">
+            <column name="ORDER_ID" value="6"/>
+            <column name="ITEM_ID" value="11"/>
+        </insert>
+        <insert tableName="ORDER_ITEM">
+            <column name="ORDER_ID" value="6"/>
+            <column name="ITEM_ID" value="10"/>
+        </insert>
+        <insert tableName="ORDER_ITEM">
+            <column name="ORDER_ID" value="7"/>
+            <column name="ITEM_ID" value="9"/>
+        </insert>
+        <insert tableName="ORDER_ITEM">
+            <column name="ORDER_ID" value="8"/>
+            <column name="ITEM_ID" value="8"/>
+        </insert>
+        <insert tableName="ORDER_ITEM">
+            <column name="ORDER_ID" value="8"/>
+            <column name="ITEM_ID" value="7"/>
+        </insert>
+        <insert tableName="ORDER_ITEM">
+            <column name="ORDER_ID" value="8"/>
+            <column name="ITEM_ID" value="5"/>
+        </insert>
+        <insert tableName="ORDER_ITEM">
+            <column name="ORDER_ID" value="8"/>
+            <column name="ITEM_ID" value="2"/>
+        </insert>
+    </changeSet>
+</databaseChangeLog>
