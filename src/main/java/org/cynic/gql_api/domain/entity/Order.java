@@ -43,4 +43,24 @@ public class Order {
         inverseJoinColumns = @JoinColumn(name = "ITEM_ID", referencedColumnName = "ID")
     )
     private Set<Item> items;
+
+    public Long getId() {
+        return id;
+    }
+
+    public OffsetDateTime getDateTime() {
+        return dateTime;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public Set<Item> getItems() {
+        return items;
+    }
 }

@@ -54,7 +54,7 @@ import org.springframework.graphql.execution.RuntimeWiringConfigurer;
     @ComponentScan.Filter(type = FilterType.CUSTOM, classes = {AutoConfigurationExcludeFilter.class})
 })
 @EnableJpaRepositories
-@EntityScan("org.cynic.logistics.domain.entity")
+@EntityScan("org.cynic.gql_api.domain.entity")
 public class Configuration {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(Configuration.class);

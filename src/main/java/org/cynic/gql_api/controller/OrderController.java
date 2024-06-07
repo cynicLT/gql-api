@@ -1,11 +1,13 @@
 package org.cynic.gql_api.controller;
 
 import java.util.List;
+import java.util.Map;
 import org.cynic.gql_api.domain.http.ItemHttp;
 import org.cynic.gql_api.domain.http.OrderHttp;
+import org.cynic.gql_api.service.OrderService;
 import org.springframework.graphql.data.method.annotation.Argument;
+import org.springframework.graphql.data.method.annotation.BatchMapping;
 import org.springframework.graphql.data.method.annotation.QueryMapping;
-import org.springframework.graphql.data.method.annotation.SchemaMapping;
 import org.springframework.stereotype.Controller;
 
 @Controller
@@ -23,13 +25,15 @@ public class OrderController {
         return orderService.orders();
     }
 
-    @SchemaMapping(typeName = "Item", field = "orders")
-    public List<ItemHttp> itemsByOrderId(Long id) {
-        return itemService.itemsByOrderId(id);
+
+    @BatchMapping(typeName = "Item", field = "orders")
+    public Map<ItemHttp, List<OrderHttp>> ordersByItems(List<ItemHttp> http) {
+        return orderService.ordersBy(http);
     }
 
+
     @QueryMapping
-    public OrderHttp orderBy(@Argument Long id) {
+    public OrderHttp orderById(@Argument Long id) {
         return orderService.orderBy(id);
     }
 }

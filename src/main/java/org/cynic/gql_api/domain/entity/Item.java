@@ -34,4 +34,19 @@ public class Item {
     @ManyToMany(mappedBy = "items", fetch = FetchType.LAZY)
     private Set<Order> orders;
 
+    public Long getId() {
+        return id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public Set<Order> getOrders() {
+        return orders;
+    }
 }

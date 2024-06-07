@@ -6,7 +6,7 @@ import java.time.OffsetDateTime;
 import java.util.List;
 
 public record OrderHttp(
-    String id,
+    Long id,
     String name,
     String description,
     OffsetDateTime dateTime,

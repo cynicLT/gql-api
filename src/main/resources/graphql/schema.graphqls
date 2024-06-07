@@ -1,9 +1,9 @@
 type Query {
-    itemBy(id:ID): Item
+    itemById(id:ID): Item
     items:[Item!]
-    itemsBy(orderId:ID): [Item!]
+    itemsByOrderId(orderId:ID): [Item!]
 
-    orderBy(id:ID): Order
+    orderById(id:ID): Order
     orders:[Order!]
 
 }

@@ -5,7 +5,7 @@ import java.io.Serializable;
 import java.util.List;
 
 public record ItemHttp(
-    String id,
+    Long id,
     String name,
     String description,
     List<OrderHttp> orders

@@ -2,10 +2,9 @@ package org.cynic.gql_api.controller;
 
 import java.util.List;
 import org.cynic.gql_api.domain.http.ItemHttp;
-import org.cynic.gql_api.domain.http.OrderHttp;
+import org.cynic.gql_api.service.ItemService;
 import org.springframework.graphql.data.method.annotation.Argument;
 import org.springframework.graphql.data.method.annotation.QueryMapping;
-import org.springframework.graphql.data.method.annotation.SchemaMapping;
 import org.springframework.stereotype.Controller;
 
 @Controller
@@ -24,18 +23,17 @@ public class ItemController {
 
 
     @QueryMapping
-    public List<ItemHttp> itemsBy(@Argument Long orderId) {
+    public List<ItemHttp> itemsByOrderId(@Argument Long orderId) {
         return itemService.itemsBy(orderId);
     }
 
-    @SchemaMapping(typeName = "Item", field = "orders")
-    public List<OrderHttp> ordersByItemId(Long id) {
-        return orderService.ordersByItemId(id);
-    }
-
+//    @SchemaMapping(typeName = "Order", field = "items")
+//    public List<ItemHttp> itemsByOrder(OrderHttp http) {
+//        return itemService.itemsBy(http);
+//    }
 
     @QueryMapping
-    public ItemHttp itemBy(@Argument Long id) {
+    public ItemHttp itemById(@Argument Long id) {
         return itemService.itemBy(id);
     }
 
